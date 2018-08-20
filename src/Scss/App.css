@@ -61,3 +61,7 @@
   .brand-logo {
     left: 15px !important;
     transform: none !important; } }
+
+@media only screen and (max-width: 480px) {
+  .brand-logo {
+    background-size: 40px 44px !important; } }
