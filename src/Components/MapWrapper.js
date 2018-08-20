@@ -158,11 +158,9 @@ class MapWrapper extends Component {
   populateInWindow = (marker) => {
     const {map} = this;
     const {largInfoWindow, locations, infowindowstatus} = this.state;
-    console.log(marker)
     // Check if the infoWindow is not already opened for this marker
     if (largInfoWindow.marker !== marker) {
         largInfoWindow.marker = marker;
-        console.log('marker ist nicht gleich gewesen')
         // add the additonal Content
         // get the correct data from the locations array
         const location = locations.filter((location) => (location.title === marker.title))
@@ -211,7 +209,8 @@ class MapWrapper extends Component {
           largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p><hr />'+ apiContent);
 
         }).catch(err =>{
-            console.log('api-error', err);
+            // keep for debugging CORS Issue
+            //console.log('api-error', err);
             apiContent = '<div id="api">Sorry!! Something went wrong when requesting the Weather data. Probalby the limit of daily requests is exeeded.</div>';
             largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p><hr />'+ apiContent);
         })
@@ -236,7 +235,6 @@ class MapWrapper extends Component {
       })
     }
     // Center map to a marker position
-    console.log('bla', marker.getPosition())
     map.panTo(marker.getPosition());
   };
 
