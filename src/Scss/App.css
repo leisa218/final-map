@@ -1,0 +1,36 @@
+/*colors*/
+/*general classes*/
+::placeholder {
+  color: #fff;
+  opacity: 1; }
+
+/*map styles*/
+.map_container #map {
+  position: absolute !important;
+  width: 100%;
+  height: 100%; }
+
+.navbar_wrapper {
+  position: absolute;
+  z-index: 999;
+  width: 100%; }
+  .navbar_wrapper .input-field {
+    float: left;
+    margin-left: 0;
+    padding: 0; }
+    .navbar_wrapper .input-field .search_bar {
+      margin: 0; }
+    .navbar_wrapper .input-field .prefix {
+      position: absolute;
+      right: 0px; }
+      .navbar_wrapper .input-field .prefix.active {
+        color: #000; }
+
+.sidenav .slide-nav-introduction {
+  padding: 0 15px; }
+
+.sidenav .side-nav a#close-btn {
+  padding: 5px 14px 0 14px; }
+
+.sidenav .side-nav .dropdown-content li > a, .sidenav .side-nav .dropdown-content li > span {
+  color: #000; }
