@@ -2,13 +2,13 @@
 
 /*colors*/
 
-$black: #000;
+$black: #333;
 $white: #fff;
 
 
 /*general classes*/
 ::placeholder {
-    color: $white;
+    color: $black;
     opacity: 1; 
 }
 
@@ -20,6 +20,9 @@ $white: #fff;
 }
 
 .navbar_wrapper{
+	a{
+		color:$black;
+	}
 	.brand-logo{
 		text-indent:-999em;
 		overflow:hidden;

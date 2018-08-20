@@ -1,7 +1,7 @@
 /*colors*/
 /*general classes*/
 ::placeholder {
-  color: #fff;
+  color: #333;
   opacity: 1; }
 
 /*map styles*/
@@ -14,6 +14,8 @@
   position: absolute;
   z-index: 999;
   width: 100%; }
+  .navbar_wrapper a {
+    color: #333; }
   .navbar_wrapper .brand-logo {
     text-indent: -999em;
     overflow: hidden;
@@ -35,7 +37,7 @@
         position: absolute;
         right: 0px; }
         .navbar_wrapper .search_bar_wrapper .input-field .prefix.active {
-          color: #000; }
+          color: #333; }
 
 .sidenav .slide-nav-introduction {
   padding: 0 15px; }
@@ -44,7 +46,7 @@
   padding: 5px 14px 0 14px; }
 
 .sidenav .side-nav .dropdown-content li > a, .sidenav .side-nav .dropdown-content li > span {
-  color: #000; }
+  color: #333; }
 
 .nav-wrapper .hide-on-med-and-down {
   display: block !important; }
