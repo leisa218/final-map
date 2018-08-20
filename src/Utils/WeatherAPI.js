@@ -16,12 +16,12 @@ export const get = (weather) =>
     .then(res => res.json())
     .then(data => data)
 
-
 // this is the api call
 export const getAll = (lat, lng) =>
-  fetch(`${api}/${lat},${lng}?units=auto`, {mode: 'no-cors', headers: {headers}, credentials: 'same-origin'})
+  fetch(`${api}/${lat},${lng}?units=auto`, {mode: 'cors', headers: {headers}, credentials: 'same-origin'})
     .then(res => res.json())
     .then(data => data);
+
 
 
 export const search = (query) =>
