@@ -6,13 +6,13 @@ Without any give code we should build a map app based on React.
 
 ## Install 
 - Clone this respository
-- cd into myreads directory
+- cd into final-map directory
 - Run npm install in the root directory
 - Run npm start to start the server
 - React will open the App on https://localhost:3000
 
 ## Demo
-- https://leisa218.github.io/
+- https://leisa218.github.io/final-map/
 
 ## Features and Goals
 
@@ -67,7 +67,7 @@ Without any give code we should build a map app based on React.
 
 ## Important
 CORS Policy Errow
-Do get data from the Weather API you will need to enable a browser Plugin to avoid CORS Error on request. For Chrome you can find it here: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi For Firefox you find it here: https://addons.mozilla.org/de/firefox/addon/cors-everywhere/
+Do get data from the Weather API you will need to enable a browser Plugin to avoid CORS Error on request. For Chrome you can find it [here] (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi) For Firefox you find it [here] (https://addons.mozilla.org/de/firefox/addon/cors-everywhere/)
 
 
 ## Credits
@@ -75,8 +75,8 @@ Do get data from the Weather API you will need to enable a browser Plugin to avo
 Big thanks to all people who have helped me. Here is a list of resources where I find helful information.
 
 - This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-- https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/ (Knowledge and React component)
-- https://react-materialize.github.io/#/ (Theming)
+- Fullstackreact [Blogpost] (https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/) (Knowledge and React component)
+- [Theming] (https://react-materialize.github.io/#/)
 
 ## And Last but not Least!!
 
