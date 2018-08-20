@@ -58,7 +58,7 @@ class MapWrapper extends Component {
       const mapNode = ReactDOM.findDOMNode(mapReference);
       const mapSettings = Object.assign({},{
         center: this.state.initialCenter,
-        zoom: 14
+        zoom: 5
       })
 
       this.map = new maps.Map(mapNode, mapSettings);
@@ -87,7 +87,7 @@ class MapWrapper extends Component {
     const { locations } = this.state;
     const map = this.map;
 
-    locations.map((location) => {
+    locations.map((location) =>{
       let request = {
           query: location.title,
           fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry','icon', 'id', 'place_id', 'types']
@@ -170,18 +170,18 @@ class MapWrapper extends Component {
         // select Elements from the result
         let locationCats = location.map((e) => e.types).join(',  ')
         let locationAddress = location.map((l) => l.formatted_address).join(',  ')
-
-        // keep
-        /*
-        let locationCountry = locationAddress.split(/[, ]+/).pop();
+        // keep for later improvement
+        /*let locationCountry = locationAddress.split(/[, ]+/).pop();
         let locationGeo = location.map((l) =>{
           lat = l.location.lat,
           lng = l.location.lng
         })
         */
-
         let lat = '';
         let lng = '';
+
+
+
         // to do: refactor to external function
         // get Conten from external API
         let apiContent = '<div id="api">...loading</div>'
@@ -209,7 +209,6 @@ class MapWrapper extends Component {
           largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p><hr />'+ apiContent);
 
         }).catch(err =>{
-            // keep for debugging CORS Issue
             //console.log('api-error', err);
             apiContent = '<div id="api">Sorry!! Something went wrong when requesting the Weather data. Probalby the limit of daily requests is exeeded.</div>';
             largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p><hr />'+ apiContent);
@@ -288,7 +287,7 @@ class MapWrapper extends Component {
 
   updateLocations =() =>{
     const{searchresult, locations} = this.state;
-    if(searchresult && searchresult !== '' && searchresult !== undefined ){
+    if(searchresult && searchresult != '' && searchresult !== undefined ){
       this.setState({
         searchresult:searchresult
       })
@@ -299,7 +298,7 @@ class MapWrapper extends Component {
     }
   }
   render() {
-    
+
     return (
       <div className="map_container">
         <NavBarWrapper searchLocations={this.searchLocations} locations={this.state.locations}/>
