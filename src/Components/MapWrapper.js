@@ -172,7 +172,7 @@ class MapWrapper extends Component {
         // add the additonal Content
         // get the correct data from the locations array
         const location = locations.filter((location) => (location.title === marker.title))
-        const locationName =  location.title
+        const locationName =  marker.title
 
 
         // select Elements from the result
@@ -239,6 +239,7 @@ class MapWrapper extends Component {
       })
     }
     // Center map to a marker position
+    console.log('bla', marker.getPosition())
     map.panTo(marker.getPosition());
   };
 

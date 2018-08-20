@@ -1,3 +1,5 @@
+
+
 /*colors*/
 
 $black: #000;
@@ -18,6 +20,14 @@ $white: #fff;
 }
 
 .navbar_wrapper{
+	.brand-logo{
+		text-indent:-999em;
+		overflow:hidden;
+		background: url('../Resources/Images/th-logo.png') no-repeat 5px 5px;
+		background-size:50px 57px;
+		width:64px;
+		height:64px;
+	}
 	position:absolute;
 	z-index:999;
 	width:100%;
@@ -41,6 +51,7 @@ $white: #fff;
 			}
 		}	
 	}
+
 }
 
 .sidenav{

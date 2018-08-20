@@ -14,6 +14,13 @@
   position: absolute;
   z-index: 999;
   width: 100%; }
+  .navbar_wrapper .brand-logo {
+    text-indent: -999em;
+    overflow: hidden;
+    background: url("../Resources/Images/th-logo.png") no-repeat 5px 5px;
+    background-size: 50px 57px;
+    width: 64px;
+    height: 64px; }
   .navbar_wrapper .search_bar_wrapper {
     margin-right: 0; }
     .navbar_wrapper .search_bar_wrapper .input-field {
