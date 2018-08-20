@@ -69,6 +69,7 @@ Without any give code we should build a map app based on React.
 CORS Policy Errow
 Do get data from the Weather API you will need to enable a browser Plugin to avoid CORS Error on request. For Chrome you can find it here: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi For Firefox you find it here: https://addons.mozilla.org/de/firefox/addon/cors-everywhere/
 
+
 ## Credits
 
 Big thanks to all people who have helped me. Here is a list of resources where I find helful information.
