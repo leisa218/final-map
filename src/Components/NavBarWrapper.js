@@ -20,10 +20,12 @@ class NavBarWrapper extends Component {
     const query = this.state.query;
     return (
       <div className='navbar_wrapper'>
-        <Navbar brand='logo' className='yellow darken-1' right>
-          <Debounce time="400" handler="onChange">
-            <Input placeholder="Search" s={6} label="Search" inline={true} className='search_bar' icon='search' onChange={(e) => searchLocations(e.target.value)}/>
-          </Debounce>
+        <Navbar brand='logo' className='yellow darken-1sidenav-trigger ' right fixed={true}>
+          <NavItem href='#' className='search_bar_wrapper'>
+            <Debounce time="400" handler="onChange">
+              <Input placeholder="Search" s={6} label="Search" inline={true} className='search_bar' icon='search' onChange={(e) => searchLocations(e.target.value)}/>
+            </Debounce>
+          </NavItem>
           <NavItem data-activates="sidenav"><Icon>dehaze</Icon></NavItem>
           <NavItem href='#'><Icon>more_vert</Icon></NavItem>
         </Navbar>

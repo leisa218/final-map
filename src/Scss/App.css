@@ -14,17 +14,21 @@
   position: absolute;
   z-index: 999;
   width: 100%; }
-  .navbar_wrapper .input-field {
-    float: left;
-    margin-left: 0;
-    padding: 0; }
-    .navbar_wrapper .input-field .search_bar {
-      margin: 0; }
-    .navbar_wrapper .input-field .prefix {
-      position: absolute;
-      right: 0px; }
-      .navbar_wrapper .input-field .prefix.active {
-        color: #000; }
+  .navbar_wrapper .search_bar_wrapper {
+    margin-right: 0; }
+    .navbar_wrapper .search_bar_wrapper .input-field {
+      float: left;
+      margin-left: 0;
+      padding: 0;
+      position: relative;
+      right: -25px; }
+      .navbar_wrapper .search_bar_wrapper .input-field .search_bar {
+        margin: 0; }
+      .navbar_wrapper .search_bar_wrapper .input-field .prefix {
+        position: absolute;
+        right: 0px; }
+        .navbar_wrapper .search_bar_wrapper .input-field .prefix.active {
+          color: #000; }
 
 .sidenav .slide-nav-introduction {
   padding: 0 15px; }
@@ -34,3 +38,17 @@
 
 .sidenav .side-nav .dropdown-content li > a, .sidenav .side-nav .dropdown-content li > span {
   color: #000; }
+
+.nav-wrapper .hide-on-med-and-down {
+  display: block !important; }
+
+.nav-wrapper #nav-mobile {
+  display: none; }
+
+.nav-wrapper .button-collapse {
+  display: none; }
+
+@media only screen and (max-width: 992px) {
+  .brand-logo {
+    left: 15px !important;
+    transform: none !important; } }

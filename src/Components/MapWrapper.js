@@ -12,6 +12,8 @@ class MapWrapper extends Component {
   constructor(props){
       super(props);
   }
+  // initial data
+  // toDo: get this data from external and make it possible to add new entries
   state = {
     map:{},
     locations: [
@@ -34,7 +36,8 @@ class MapWrapper extends Component {
       {title: 'germany', countriebounds:{lat:51.165691, lng:10.451526000000058}},
       {title: 'indonesia', countriebounds:{lat:-0.789275, lng:113.92132700000002}}
     ],
-    weatherdata: []
+    weatherdata: [],
+    infoWindowstatus: false
   }
 
   componentDidMount(){
@@ -43,8 +46,6 @@ class MapWrapper extends Component {
 
   componentDidUpdate(_, prevState) {
     if (this.state.searchresult !== prevState.searchresult) {
-        //console.log('aktueller status', this.state.searchresult, this.state.query)
-        //console.log('vorheriger status', prevState.searchresult, prevState.query)
         this.hideMarker();
         this.renderMarker();
       } else {
@@ -78,6 +79,10 @@ class MapWrapper extends Component {
       this.setState({
         largInfoWindow: largInfoWindow,
       })
+
+      this.map.addListener('click', () =>{
+        this.closeInfoWindow();
+      });
     }
   }
 
@@ -151,23 +156,25 @@ class MapWrapper extends Component {
     this.setState({markers});   
   }
 
-// do later
+  // todo:
   setMarkerDetails = (marker) =>{
     // extract the detail parts into seperate function
   }
 
   populateInWindow = (marker) => {
     const {map} = this;
-    const {largInfoWindow, locations} = this.state;
-    const infoDiv = this.refs.info
+    const {largInfoWindow, locations, infowindowstatus} = this.state;
+    console.log(marker)
     // Check if the infoWindow is not already opened for this marker
     if (largInfoWindow.marker !== marker) {
         largInfoWindow.marker = marker;
-
+        console.log('marker ist nicht gleich gewesen')
         // add the additonal Content
-        const locationName =  marker.title
-
+        // get the correct data from the locations array
         const location = locations.filter((location) => (location.title === marker.title))
+        const locationName =  location.title
+
+
         // select Elements from the result
         let locationCats = location.map((e) => e.types).join(',  ')
         let locationAddress = location.map((l) => l.formatted_address).join(',  ')
@@ -178,6 +185,9 @@ class MapWrapper extends Component {
           lat = l.location.lat,
           lng = l.location.lng
         })
+
+
+
         // to do: refactor to external function
         // get Conten from external API
         let apiContent = '<div id="api">...loading</div>'
@@ -208,10 +218,6 @@ class MapWrapper extends Component {
             apiContent = '<div id="api">Sorry!! Something went wrong when requesting the Weather data. Probalby the limit of daily requests is exeeded.</div>';
             largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p><hr />'+ apiContent);
         })
-
-
-
-        
         
         largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p>');
         
@@ -222,6 +228,15 @@ class MapWrapper extends Component {
 
         //open the marker
         largInfoWindow.open(this.map, marker);
+        this.setState({
+          infowindowstatus: true
+        })
+    }
+    if(largInfoWindow.marker == marker && infowindowstatus == false){
+      largInfoWindow.open(this.map, marker);
+      this.setState({
+        infowindowstatus:true
+      })
     }
     // Center map to a marker position
     map.panTo(marker.getPosition());
@@ -243,7 +258,17 @@ class MapWrapper extends Component {
     }
   }
 
-  closeInfoWindow = () => {}
+  closeInfoWindow = () => {
+    const {largInfoWindow, infowindowstatus} = this.state;
+    // check if infowindow is open
+    if(infowindowstatus === true){
+      largInfoWindow.setMarker = null;
+      largInfoWindow.close(); 
+      this.setState({
+        infowindowstatus:false
+      }) 
+    }
+  }
 
 
   searchLocations = (e) => {

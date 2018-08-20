@@ -21,20 +21,25 @@ $white: #fff;
 	position:absolute;
 	z-index:999;
 	width:100%;
-	.input-field{
-			float:left;
-			margin-left:0;
-			padding:0;
-			.search_bar{
-				margin:0;
+	.search_bar_wrapper{
+		margin-right:0;
+		.input-field{
+				float:left;
+				margin-left:0;
+				padding:0;
+				position:relative;
+				right:-25px;
+				.search_bar{
+					margin:0;
+				}
+				.prefix{
+					position:absolute;
+					right:0px;
+					&.active{
+						color:$black;
+				}
 			}
-			.prefix{
-				position:absolute;
-				right:0px;
-				&.active{
-					color:$black;
-			}
-		}
+		}	
 	}
 }
 
@@ -51,5 +56,25 @@ $white: #fff;
 		.dropdown-content li >a, .dropdown-content li > span{
 			color:$black;
 		}
+	}
+}
+// disable default styles for navbar
+.nav-wrapper{
+	.hide-on-med-and-down {
+	  display: block !important;
+	}
+	#nav-mobile {
+	  display: none;
+	}
+	.button-collapse {
+	  display: none;
+	}
+}
+
+// responsive behaviors
+@media only screen and (max-width: 992px){
+	.brand-logo{
+		left:15px!important;
+		transform:none!important;
 	}
 }
