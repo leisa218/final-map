@@ -215,6 +215,7 @@ class MapWrapper extends Component {
           largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p><hr />'+ apiContent);
 
         }).catch(err =>{
+            console.log('api-error', err);
             apiContent = '<div id="api">Sorry!! Something went wrong when requesting the Weather data. Probalby the limit of daily requests is exeeded.</div>';
             largInfoWindow.setContent('<h4>'+locationName + '</h4><hr /><p><small>Address:</small><br />'+ locationAddress+ '</p><p><small>Categories:</small><br />'+locationCats+'</p><hr />'+ apiContent);
         })
