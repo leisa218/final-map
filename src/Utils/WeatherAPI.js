@@ -1,8 +1,6 @@
 
 const api = "https://api.darksky.net/forecast/5d3f7bd96c2899293cf99631ce645168"
 
-const weatherApiKey = 'PBz3vEhQfwVATqFQpyitf8dMPpCx78'
-
 // REMEMBER this forever!!
 // This is how to set up CORS Header correctly
 const headers = {

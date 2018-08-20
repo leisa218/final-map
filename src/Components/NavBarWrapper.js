@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Debounce } from 'react-throttle';
-import { Link, Route, withRouter, Switch} from 'react-router-dom'
-import {Navbar,Input, Row, NavItem, Icon} from 'react-materialize'
+import {Navbar,Input,NavItem, Icon} from 'react-materialize'
 
 
 class NavBarWrapper extends Component {
@@ -17,7 +16,6 @@ class NavBarWrapper extends Component {
 
   render() {
     const{searchLocations} = this.props;
-    const query = this.state.query;
     return (
       <div className='navbar_wrapper'>
         <Navbar brand='logo' className='yellow darken-1sidenav-trigger ' right fixed={true}>
@@ -27,7 +25,6 @@ class NavBarWrapper extends Component {
             </Debounce>
           </NavItem>
           <NavItem data-activates="sidenav"><Icon>dehaze</Icon></NavItem>
-          <NavItem href='#'><Icon>more_vert</Icon></NavItem>
         </Navbar>
       </div>
     );

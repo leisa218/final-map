@@ -4,14 +4,10 @@ import {Map} from 'google-maps-react';
 import * as WeatherAPI from '../Utils/WeatherAPI'
 import SideNavWrapper from './SideNavWrapper'
 import NavBarWrapper from './NavBarWrapper'
-import {Navbar, NavItem, Icon} from 'react-materialize'
 
 
 
 class MapWrapper extends Component {
-  constructor(props){
-      super(props);
-  }
   // initial data
   // toDo: get this data from external and make it possible to add new entries
   state = {
@@ -91,7 +87,7 @@ class MapWrapper extends Component {
     const { locations } = this.state;
     const map = this.map;
 
-    locations.map((location) =>{
+    locations.map((location) => {
       let request = {
           query: location.title,
           fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry','icon', 'id', 'place_id', 'types']
@@ -122,9 +118,7 @@ class MapWrapper extends Component {
   renderMarker = () =>{
     const {google} = this.props;
     const markers= [];
-   
-    const query = this.state.query
-    const largInfoWindow = this.state.largInfoWindow
+
     const bounds = new google.maps.LatLngBounds();
     // check if locations are filtered
     this.updateLocations();
@@ -178,16 +172,18 @@ class MapWrapper extends Component {
         // select Elements from the result
         let locationCats = location.map((e) => e.types).join(',  ')
         let locationAddress = location.map((l) => l.formatted_address).join(',  ')
+
+        // keep
+        /*
         let locationCountry = locationAddress.split(/[, ]+/).pop();
-        let lat = '';
-        let lng = '';
         let locationGeo = location.map((l) =>{
           lat = l.location.lat,
           lng = l.location.lng
         })
+        */
 
-
-
+        let lat = '';
+        let lng = '';
         // to do: refactor to external function
         // get Conten from external API
         let apiContent = '<div id="api">...loading</div>'
@@ -233,7 +229,7 @@ class MapWrapper extends Component {
           infowindowstatus: true
         })
     }
-    if(largInfoWindow.marker == marker && infowindowstatus == false){
+    if(largInfoWindow.marker === marker && infowindowstatus === false){
       largInfoWindow.open(this.map, marker);
       this.setState({
         infowindowstatus:true
@@ -294,7 +290,7 @@ class MapWrapper extends Component {
 
   updateLocations =() =>{
     const{searchresult, locations} = this.state;
-    if(searchresult && searchresult != '' && searchresult !== undefined ){
+    if(searchresult && searchresult !== '' && searchresult !== undefined ){
       this.setState({
         searchresult:searchresult
       })
@@ -305,7 +301,6 @@ class MapWrapper extends Component {
     }
   }
   render() {
-    console.log(this)
     
     return (
       <div className="map_container">

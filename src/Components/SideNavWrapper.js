@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import { Link, Route, withRouter, Switch} from 'react-router-dom'
-import {Icon, SideNav,SideNavItem, Button, Input} from 'react-materialize'
+import {Icon, SideNav,SideNavItem, Button} from 'react-materialize'
 
 
 
 
 class SideNavWrapper extends Component {
-  constructor(props){
-      super(props);
-  }
   state = {
-    query:''
 
   }
 
@@ -23,9 +18,7 @@ class SideNavWrapper extends Component {
 
 
   render() {
-    console.log(this)
-    const {markers, populateInWindow, searchLocations} = this.props;
-    const query = this.state.query;
+    const {markers, populateInWindow} = this.props;
 
     return (
       <div className='sidenav'>
@@ -38,7 +31,7 @@ class SideNavWrapper extends Component {
           id='sidenav'
           >
 
-          <a href="#" className="right" id="close-btn" aria-label="close sidebar">
+          <a className="right" id="close-btn" aria-label="close sidebar">
             <Icon>clear</Icon>
           </a>
           <div className='slide-nav-introduction'>
