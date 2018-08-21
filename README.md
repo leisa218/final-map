@@ -65,16 +65,12 @@ Without any give code we should build a map app based on React.
 - [x] State control is managed appropriately: event handlers are passed as props to child components, and state is managed by parent component functions when appropriate.
 - [x] There are at least 5 locations in the model. These may be hard-coded or retrieved from a data API.
 
-## Important
-CORS Policy Errow
-Do get data from the Weather API you will need to enable a browser Plugin to avoid CORS Error on request. For Chrome you can find it [here](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi) For Firefox you find it [here](https://addons.mozilla.org/de/firefox/addon/cors-everywhere/)
-
-
 ## Credits
 
 Big thanks to all people who have helped me. Here is a list of resources where I find helful information.
 
 - This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+- CORS Everywhere - [Rob -w] (https://cors-anywhere.herokuapp.com/) - you saved me from the days desperation. High five!!
 - Fullstackreact [Blogpost](https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/) (Knowledge and React component)
 - [Theming](https://react-materialize.github.io/#/)
 
