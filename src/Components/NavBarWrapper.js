@@ -21,7 +21,7 @@ class NavBarWrapper extends Component {
         <Navbar brand='logo' className='yellow darken-1sidenav-trigger ' right fixed={true}>
           <NavItem href='#' className='search_bar_wrapper'>
             <Debounce time="400" handler="onChange">
-              <Input placeholder="Search" s={6} label="Search" inline={true} className='search_bar' icon='search' onChange={(e) => searchLocations(e.target.value)}/>
+              <Input placeholder="Search" s={6} label="Search" name="search bar" inline={true} className='search_bar' icon='search' onChange={(e) => searchLocations(e.target.value)}/>
             </Debounce>
           </NavItem>
           <NavItem data-activates="sidenav"><Icon>dehaze</Icon></NavItem>

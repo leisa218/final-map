@@ -18,7 +18,7 @@ class ApiWrapper extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className='Api-wrapper'>
         <MapWrapper google={this.props.google} locations={this.props.locations}/>
       </div>
     );

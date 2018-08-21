@@ -300,10 +300,16 @@ class MapWrapper extends Component {
   render() {
 
     return (
-      <div className="map_container">
-        <NavBarWrapper searchLocations={this.searchLocations} locations={this.state.locations}/>
-        <SideNavWrapper locations={this.state.locations} markers={this.state.markers} populateInWindow={this.populateInWindow} closeInfoWindow={this.closeInfoWindow} searchLocations={this.searchLocations}/>
-        <Map id="map" ref='map' google={this.props.google} locations={this.state.locations}></Map>
+      <div className="map_content">
+        <header>  
+          <NavBarWrapper searchLocations={this.searchLocations} locations={this.state.locations}/>
+        </header>
+        <aside aria-label='off-canvas menu slide in from left'>  
+          <SideNavWrapper locations={this.state.locations} markers={this.state.markers} populateInWindow={this.populateInWindow} closeInfoWindow={this.closeInfoWindow} searchLocations={this.searchLocations}/>
+        </aside>
+        <main className="map_container" aria-label='google maps applicaton' aria-role='applicaton'>
+          <Map id="map" ref='map' google={this.props.google} locations={this.state.locations}></Map>
+        </main>
       </div>
     );
   }
