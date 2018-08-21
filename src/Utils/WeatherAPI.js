@@ -1,5 +1,5 @@
 
-const api = "https://api.darksky.net/forecast/5d3f7bd96c2899293cf99631ce645168"
+const api = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5d3f7bd96c2899293cf99631ce645168"
 
 // REMEMBER this forever!!
 // This is how to set up CORS Header correctly

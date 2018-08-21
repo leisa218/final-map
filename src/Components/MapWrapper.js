@@ -171,14 +171,14 @@ class MapWrapper extends Component {
         let locationCats = location.map((e) => e.types).join(',  ')
         let locationAddress = location.map((l) => l.formatted_address).join(',  ')
         // keep for later improvement
-        /*let locationCountry = locationAddress.split(/[, ]+/).pop();
+        let locationCountry = locationAddress.split(/[, ]+/).pop();
+        let lat = '';
+        let lng = '';
         let locationGeo = location.map((l) =>{
           lat = l.location.lat,
           lng = l.location.lng
         })
-        */
-        let lat = '';
-        let lng = '';
+       
 
 
 
