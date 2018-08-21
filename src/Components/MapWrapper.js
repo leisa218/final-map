@@ -287,7 +287,7 @@ class MapWrapper extends Component {
 
   updateLocations =() =>{
     const{searchresult, locations} = this.state;
-    if(searchresult && searchresult !== '' && searchresult !== undefined ){
+    if(searchresult && Object.keys(searchresult).length !== 0 && searchresult !== undefined ){
       this.setState({
         searchresult:searchresult
       })

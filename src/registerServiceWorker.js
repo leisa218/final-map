@@ -7,6 +7,7 @@
 
 // To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
 // This link also includes instructions on opting out of this behavior.
+console.log('start script')
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -19,10 +20,13 @@ const isLocalhost = Boolean(
 );
 
 export default function register() {
+  console.log('start register')
+  console.log('condition:', (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator))
+  console.log('condition from patch', (!process.env.PUBLIC_URL && process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator))
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
-    if (publicUrl.origin !== window.location.origin) {
+    if (publicUrl.origin !== window.location.origin ) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
       // serve assets; see https://github.com/facebookincubator/create-react-app/issues/2374
@@ -31,8 +35,9 @@ export default function register() {
 
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
+      console.log('hier', swUrl)
       if (isLocalhost) {
+        
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl);
 
@@ -53,6 +58,7 @@ export default function register() {
 }
 
 function registerValidSW(swUrl) {
+  console.log('register valid service worker')
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
@@ -82,6 +88,7 @@ function registerValidSW(swUrl) {
 }
 
 function checkValidServiceWorker(swUrl) {
+  console.log('check valid serviceworker')
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl)
     .then(response => {
@@ -109,6 +116,7 @@ function checkValidServiceWorker(swUrl) {
 }
 
 export function unregister() {
+  console.log('unregister')
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
       registration.unregister();
