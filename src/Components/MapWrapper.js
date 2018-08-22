@@ -42,6 +42,7 @@ class MapWrapper extends Component {
   }
 
   componentDidUpdate(_, prevState) {
+    // check if there is a search or not   
     if (this.state.searchresult !== prevState.searchresult) {
         this.hideMarker();
         this.renderMarker();
@@ -50,9 +51,11 @@ class MapWrapper extends Component {
 
       }
   }
-  loadStaticMap =() =>{
-    console.log('hier')
-  }
+  /* Initialize Google Maps
+  ** enrich the data
+  ** create the marker
+  ** and add event handler for map
+  */
   initMap = () =>{
     if(this.props && this.props.google){
       const{ google } = this.props;
@@ -85,6 +88,11 @@ class MapWrapper extends Component {
     }
   }
 
+
+  /* Google Places call
+  ** enrich the data
+  ** and hand data to state of component
+  */
   getPlacesValues = () => {
     const { google } = this.props;
     const { locations } = this.state;
@@ -118,6 +126,12 @@ class MapWrapper extends Component {
     })
   }
 
+
+  /* Create Marker
+  ** get data from state 
+  ** loop over elements and create Marker
+  ** add location info to bounds
+  */
   renderMarker = () =>{
     const {google} = this.props;
     const markers= [];
@@ -158,6 +172,12 @@ class MapWrapper extends Component {
     // extract the detail parts into seperate function
   }
 
+  /* Create Infowindow
+  ** get data locations from state 
+  ** call the WeatherAPI and get data based on location
+  ** loop over elements and create content for Infowindow
+  ** finaly open the infowindow
+  */
   populateInWindow = (marker) => {
     const {map} = this;
     const {largInfoWindow, locations, infowindowstatus} = this.state;
@@ -182,9 +202,6 @@ class MapWrapper extends Component {
           lng = l.location.lng;
         })
        
-
-
-
         // to do: refactor to external function
         // get Conten from external API
         let apiContent = '<div id="api">...loading</div>'
@@ -240,6 +257,10 @@ class MapWrapper extends Component {
     map.panTo(marker.getPosition());
   };
 
+  /* Hide Marker
+  ** if new Information is available
+  ** all old markers will be deleted
+  */
   hideMarker = () => {
     const {markers} = this.state;
 
@@ -248,6 +269,10 @@ class MapWrapper extends Component {
     }
   }
 
+  /* Show Marker
+  ** if no new Information is available
+  ** all old markers will be displayed
+  */
   showMarker = () => {
     const {markers} = this.state;
 
@@ -256,6 +281,10 @@ class MapWrapper extends Component {
     }
   }
 
+  /* Close Infowindow
+  ** handle click event from Infowindow
+  ** close window if open
+  */
   closeInfoWindow = () => {
     const {largInfoWindow, infowindowstatus} = this.state;
     // check if infowindow is open
@@ -268,7 +297,12 @@ class MapWrapper extends Component {
     }
   }
 
-
+  /* Handle Search Input
+  ** get the query and filter matching locations
+  ** set matching locations to state
+  ** if no query given or query is empty 
+  ** set old locations as state of searchresult
+  */
   searchLocations = (e) => {
     const query = e
     const match = new RegExp(query, 'i')
@@ -288,6 +322,12 @@ class MapWrapper extends Component {
     }
   }
 
+  /* Update Locations
+  ** check if there is a searchresult
+  ** set state of searchresult to given result
+  ** if no searchresult give
+  ** set old locations to state of searchresult
+  */
   updateLocations =() =>{
     const{searchresult, locations} = this.state;
     if(searchresult && Object.keys(searchresult).length !== 0 && searchresult !== undefined ){

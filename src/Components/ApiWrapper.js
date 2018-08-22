@@ -9,6 +9,11 @@ class ApiWrapper extends Component {
     gmFailure: false
 
   }
+
+  /* Check if Map Api could be loaded
+  ** If API could not be loaded,
+  ** change view in MapWrapper
+  */
   gm_authFailure = () =>{
       this.setState({
         gmFailure: true

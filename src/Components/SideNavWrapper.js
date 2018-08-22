@@ -15,8 +15,6 @@ class SideNavWrapper extends Component {
   componentDidUpdate(_, prevState) {
   }
 
-
-
   render() {
     const {markers, populateInWindow} = this.props;
 
