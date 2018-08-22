@@ -6693,6 +6693,19 @@ button.picker__close:focus {
 .nav-wrapper .button-collapse {
   display: none; }
 
+.api-failure {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  text-align: center;
+  position: absolute;
+  color: #ffeb3b; }
+  .api-failure div.error_wrapper h2 {
+    color: #ffeb3b;
+    margin-top: 20%; }
+  .api-failure div.error_wrapper a {
+    color: #ffeb3b !important; }
+
 @media only screen and (max-width: 992px) {
   .brand-logo {
     left: 15px !important;

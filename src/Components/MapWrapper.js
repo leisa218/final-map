@@ -4,6 +4,7 @@ import {Map} from 'google-maps-react';
 import * as WeatherAPI from '../Utils/WeatherAPI'
 import SideNavWrapper from './SideNavWrapper'
 import NavBarWrapper from './NavBarWrapper'
+import MapFailed from './MapFailed'
 
 
 
@@ -37,7 +38,7 @@ class MapWrapper extends Component {
   }
 
   componentDidMount(){
-    this.initMap()
+      this.initMap()
   }
 
   componentDidUpdate(_, prevState) {
@@ -49,7 +50,9 @@ class MapWrapper extends Component {
 
       }
   }
-
+  loadStaticMap =() =>{
+    console.log('hier')
+  }
   initMap = () =>{
     if(this.props && this.props.google){
       const{ google } = this.props;
@@ -307,9 +310,14 @@ class MapWrapper extends Component {
         <aside aria-label='off-canvas menu slide in from left'>  
           <SideNavWrapper locations={this.state.locations} markers={this.state.markers} populateInWindow={this.populateInWindow} closeInfoWindow={this.closeInfoWindow} searchLocations={this.searchLocations}/>
         </aside>
-        <main className="map_container" aria-label='google maps applicaton' role='applicaton'>
-          <Map id="map" ref='map' google={this.props.google} locations={this.state.locations}></Map>
-        </main>
+        {this.props.gmFailure === true && (
+          <MapFailed />
+        )}
+        {this.props.gmFailure === false && (
+          <main className="map_container" aria-label='google maps applicaton' role='applicaton'>
+            <Map id="map" ref='map' google={this.props.google} locations={this.state.locations}></Map>
+          </main>
+        )}
       </div>
     );
   }
