@@ -90,7 +90,7 @@ class MapWrapper extends Component {
     const { locations } = this.state;
     const map = this.map;
 
-    locations.map((location) =>{
+    locations.forEach((location) =>{
       let request = {
           query: location.title,
           fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry','icon', 'id', 'place_id', 'types']
@@ -111,7 +111,7 @@ class MapWrapper extends Component {
           }
         }
         
-      })      
+      }) 
     })
     this.setState({
       locations:locations
@@ -177,9 +177,9 @@ class MapWrapper extends Component {
         //let locationCountry = locationAddress.split(/[, ]+/).pop();
         let lat = '';
         let lng = '';
-        location.map((l) =>{
-          lat = l.location.lat,
-          lng = l.location.lng
+        location.forEach((l) =>{
+          lat = l.location.lat;
+          lng = l.location.lng;
         })
        
 
@@ -314,7 +314,7 @@ class MapWrapper extends Component {
           <MapFailed />
         )}
         {this.props.gmFailure === false && (
-          <main className="map_container" aria-label='google maps applicaton' role='applicaton'>
+          <main className="map_container" aria-label='google maps applicaton' role='application'>
             <Map id="map" ref='map' google={this.props.google} locations={this.state.locations}></Map>
           </main>
         )}
