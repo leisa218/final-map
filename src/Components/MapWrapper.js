@@ -307,7 +307,7 @@ class MapWrapper extends Component {
         <aside aria-label='off-canvas menu slide in from left'>  
           <SideNavWrapper locations={this.state.locations} markers={this.state.markers} populateInWindow={this.populateInWindow} closeInfoWindow={this.closeInfoWindow} searchLocations={this.searchLocations}/>
         </aside>
-        <main className="map_container" aria-label='google maps applicaton' aria-role='applicaton'>
+        <main className="map_container" aria-label='google maps applicaton' role='applicaton'>
           <Map id="map" ref='map' google={this.props.google} locations={this.state.locations}></Map>
         </main>
       </div>
