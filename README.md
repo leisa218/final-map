@@ -8,6 +8,7 @@ Without any give code we should build a map app based on React.
 - Clone this respository
 - cd into final-map directory
 - Run npm install in the root directory
+- Run npm run build to create a the build
 - Run npm start to start the server
 - React will open the App on https://localhost:3000
 
@@ -57,7 +58,7 @@ Without any give code we should build a map app based on React.
 
 ### Offline Use
 
-- [x] When available in the browser, the site uses a service worker to cache responses to requests for site assets. Visited pages are rendered when there is no network access.
+- [x] When available in the browser, the site uses a service worker to cache responses to requests for site assets. Visited pages are rendered when there is no network access. (the service worker is running only in build)
 
 ### Application Architecture
 
