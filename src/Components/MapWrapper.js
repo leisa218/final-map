@@ -154,7 +154,7 @@ class MapWrapper extends Component {
 
       bounds.extend(marker.position);
 
-      this.map.fitBounds(bounds);
+      //this.map.fitBounds(bounds);
 
       marker.addListener('click', () =>{
         marker.setAnimation( google.maps.Animation.BOUNCE)

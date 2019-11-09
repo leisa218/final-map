@@ -1,4 +1,4 @@
-# MyReads Project - FEND React Project for Udacity's Nanodegree
+# Map Project - FEND React Project for Udacity's Nanodegree
 
 This is the final Project from the FEND Udacity Nanodegree build in React.
 
