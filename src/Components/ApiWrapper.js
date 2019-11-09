@@ -36,5 +36,5 @@ class ApiWrapper extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "xxxxx"
+  apiKey: "AIzaSyB7cKVZjqF89A7rOhSdPMebOCp6WCSoD2s"
 })(ApiWrapper);
