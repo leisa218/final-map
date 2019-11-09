@@ -22,8 +22,8 @@ class MapWrapper extends Component {
     ],
     markers: [],
     initialCenter:{
-      lat: 52.061905,
-      lng: 8.519182,
+      lat: 13.736717,
+      lng: 100.523186,
     },
     icon:{},
     selectedMarker:[],
