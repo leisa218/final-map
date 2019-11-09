@@ -64,7 +64,7 @@ class MapWrapper extends Component {
       const mapNode = ReactDOM.findDOMNode(mapReference);
       const mapSettings = Object.assign({},{
         center: this.state.initialCenter,
-        zoom: 3
+        zoom: 0
       })
 
       this.map = new maps.Map(mapNode, mapSettings);
