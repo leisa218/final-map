@@ -14,27 +14,27 @@ class MapWrapper extends Component {
   state = {
     map:{},
     locations: [
-      {title: 'Ban Bua Cottage, Thailand', location: {lat: 11.6656533, lng: 102.5333826}},
-      {title: 'bb Divers, Thailand', location: {lat: 11.6347822, lng: 102.5461192}},
-      {title: 'bb Dorm, Thailand', location: {lat: 11.6752207, lng: 102.5404241}},
-      {title: 'Big Dreams Resort, Thailand', location: {lat: 11.6249407, lng: 102.5450022}},
-      {title: 'Captain Nhong Seafood & Homestay, Thailand', location: {lat: 11.7073724, lng: 102.5690057}},
-      {title: 'Eve House, Thailand', location: {lat: 11.6086722, lng: 102.5420489}},
-      {title: 'Happy Days Guesthouse, Thailand', location: {lat: 11.6244546, lng: 102.5447781}},
-      {title: 'Mermaid Fashion & Cafe, Thailand', location: {lat: 11.6589092, lng: 102.5372774}},
-      {title: 'Paradise Divers - Koh Kood, Thailand', location: {lat: 11.6246798, lng: 102.5444911}},
-      {title: 'Peterpan Resort, Thailand', location: {lat: 11.6342585, lng: 102.5435445}},
-      {title: 'Seafar Resort, Thailand', location: {lat: 11.6502999, lng: 102.5333592}},
-      {title: 'Shantaa Resort, Thailand', location: {lat: 11.654254, lng: 102.5308029}},
-      {title: 'Wooden Hut, Thailand', location: {lat: 11.6084933, lng: 102.5429677}}
+      {title: 'Ban Bua Cottage, Thailand', location: {lat: 11.665669, lng: 102.536357}},
+      {title: 'bb Divers, Thailand', location: {lat: 11.632421, lng: 102.547440}},
+      {title: 'bb Dorm, Thailand', location: {lat: 11.675565, lng: 102.541089}},
+      {title: 'Big Dreams Resort, Thailand', location: {lat: 11.625287, lng: 102.546876}},
+      {title: 'Captain Nhong Seafood & Homestay, Thailand', location: {lat: 11.707709, lng: 102.571211}},
+      {title: 'Eve House, Thailand', location: {lat: 11.609061, lng: 102.544243}},
+      {title: 'Happy Days Guesthouse, Thailand', location: {lat: 11.624801, lng: 102.546994}},
+      {title: 'Mermaid Fashion & Cafe, Thailand', location: {lat: 11.659266, lng: 102.539536}},
+      {title: 'Paradise Divers - Koh Kood, Thailand', location: {lat: 11.625006, lng: 102.546685}},
+      {title: 'Peterpan Resort, Thailand', location: {lat: 11.634626, lng: 102.545739}},
+      {title: 'Seafar Resort, Thailand', location: {lat: 11.650647, lng: 102.535500}},
+      {title: 'Shantaa Resort, Thailand', location: {lat: 11.654611, lng: 102.533018}},
+      {title: 'Wooden Hut, Thailand', location: {lat: 11.608840, lng: 102.545173}}
 
 
 
     ],
     markers: [],
     initialCenter:{
-      lat: 52.061905,
-      lng: 8.519182,
+      lat: 12.9037023,
+      lng: 92.4381501,
     },
     icon:{},
     selectedMarker:[],
@@ -42,7 +42,8 @@ class MapWrapper extends Component {
     searchresult:[],
     countries:[
       {title: 'germany', countriebounds:{lat:51.165691, lng:10.451526000000058}},
-      {title: 'indonesia', countriebounds:{lat:-0.789275, lng:113.92132700000002}}
+      {title: 'indonesia', countriebounds:{lat:-0.789275, lng:113.92132700000002}},
+      {title: 'thailand', countriebounds:{lat:12.9037023, lng:92.4381501}}
     ],
     weatherdata: [],
     infoWindowstatus: false
@@ -75,7 +76,7 @@ class MapWrapper extends Component {
       const mapNode = ReactDOM.findDOMNode(mapReference);
       const mapSettings = Object.assign({},{
         center: this.state.initialCenter,
-        zoom: 10
+        zoom: 1
       })
 
       this.map = new maps.Map(mapNode, mapSettings);
