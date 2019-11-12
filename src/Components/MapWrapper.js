@@ -14,11 +14,22 @@ class MapWrapper extends Component {
   state = {
     map:{},
     locations: [
-      {title: 'Oetkerhalle, Bielefeld', location: {lat: 52.028232, lng: 8.513041}},
-      {title: 'Altes Rathaus, Bielefeld', location: {lat: 52.020374, lng: 8.534645}},
-      {title: 'Sparrenburg, Bielefeld', location: {lat: 52.0149, lng: 8.52678}},
-      {title: 'Kesselbrink, Bielefeld', location: {lat: 52.024053, lng: 8.53708}},
-      {title: 'Abian House, Nusa Penida, Idonesien', location: {lat: -8.680262899999999, lng: 115.57389940000007}}
+      {title: 'Ban Bua Cottage, Thailand', location: {lat: 11.6656533, lng: 102.5333826}},
+      {title: 'bb Divers, Thailand', location: {lat: 11.6347822, lng: 102.5461192}},
+      {title: 'bb Dorm, Thailand', location: {lat: 11.6752207, lng: 102.5404241}},
+      {title: 'Big Dreams Resort, Thailand', location: {lat: 11.6249407, lng: 102.5450022}},
+      {title: 'Captain Nhong Seafood & Homestay, Thailand', location: {lat: 11.7073724, lng: 102.5690057}},
+      {title: 'Eve House, Thailand', location: {lat: 11.6086722, lng: 102.5420489}},
+      {title: 'Happy Days Guesthouse, Thailand', location: {lat: 11.6244546, lng: 102.5447781}},
+      {title: 'Mermaid Fashion & Cafe, Thailand', location: {lat: 11.6589092, lng: 102.5372774}},
+      {title: 'Paradise Divers - Koh Kood, Thailand', location: {lat: 11.6246798, lng: 102.5444911}},
+      {title: 'Peterpan Resort, Thailand', location: {lat: 11.6342585, lng: 102.5435445}},
+      {title: 'Seafar Resort, Thailand', location: {lat: 11.6502999, lng: 102.5333592}},
+      {title: 'Shantaa Resort, Thailand', location: {lat: 11.654254, lng: 102.5308029}},
+      {title: 'Wooden Hut, Thailand', location: {lat: 11.6084933, lng: 102.5429677}}
+
+
+
     ],
     markers: [],
     initialCenter:{
@@ -154,7 +165,7 @@ class MapWrapper extends Component {
 
       bounds.extend(marker.position);
 
-      //this.map.fitBounds(bounds);
+      this.map.fitBounds(bounds);
 
       marker.addListener('click', () =>{
         marker.setAnimation( google.maps.Animation.BOUNCE)
