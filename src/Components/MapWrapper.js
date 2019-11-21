@@ -26,7 +26,10 @@ class MapWrapper extends Component {
       {title: 'Peterpan Resort, Thailand', location: {lat: 11.634626, lng: 102.545739}},
       {title: 'Seafar Resort, Thailand', location: {lat: 11.650647, lng: 102.535500}},
       {title: 'Shantaa Resort, Thailand', location: {lat: 11.654611, lng: 102.533018}},
-      {title: 'Wooden Hut, Thailand', location: {lat: 11.608840, lng: 102.545173}}
+      {title: 'Wooden Hut, Thailand', location: {lat: 11.608840, lng: 102.545173}},
+      {title: 'Kuba Lounge, Thailand', location: {lat: 11.609090, lng: 102.547124}},
+      {title: 'Wave F, Thailand', location: {lat: 11.664032, lng: 102.536331}},
+      {title: 'Koh Kood Guesthouse, Thailand', location: {lat: 11.675546, lng: 102.541105}}
 
 
 
