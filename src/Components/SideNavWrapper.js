@@ -17,7 +17,7 @@ class SideNavWrapper extends Component {
 
   render() {
     const {markers, populateInWindow} = this.props;
-
+    console.log(markers);
     return (
       <div className='sidenav'>
           {this.props.data && Array.isArray(this.props.data) && this.props.data.map((data, index) => {
@@ -38,7 +38,7 @@ class SideNavWrapper extends Component {
           </div>
           <SideNavItem divider />
           <SideNavItem subheader>Locations</SideNavItem>
-          {markers.map((marker, index) =>(
+          {markers.sort((a, b) => (a.title > b.title) ? 1 : -1).map((marker, index) =>(
             <SideNavItem waves key={index} onClick={() => populateInWindow(marker)}>{marker.title}</SideNavItem>
           ))}
         </SideNav>

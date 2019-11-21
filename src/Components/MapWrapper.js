@@ -15,8 +15,8 @@ class MapWrapper extends Component {
     map:{},
     locations: [
       {title: 'Ban Bua Cottage, Thailand', location: {lat: 11.665669, lng: 102.536357}},
-      {title: 'bb Divers, Thailand', location: {lat: 11.632421, lng: 102.547440}},
-      {title: 'bb Dorm, Thailand', location: {lat: 11.632400, lng: 102.547408}},
+      {title: 'BB Divers, Thailand', location: {lat: 11.632421, lng: 102.547440}},
+      {title: 'BB Dorm, Thailand', location: {lat: 11.632400, lng: 102.547408}},
       {title: 'Big Dreams Resort, Thailand', location: {lat: 11.625287, lng: 102.546876}},
       {title: 'Captain Nhong Seafood & Homestay, Thailand', location: {lat: 11.707709, lng: 102.571211}},
       {title: 'Eve House, Thailand', location: {lat: 11.609061, lng: 102.544243}},
@@ -29,7 +29,8 @@ class MapWrapper extends Component {
       {title: 'Wooden Hut, Thailand', location: {lat: 11.608840, lng: 102.545173}},
       {title: 'Kuba Lounge, Thailand', location: {lat: 11.609090, lng: 102.547124}},
       {title: 'Wave F, Thailand', location: {lat: 11.664032, lng: 102.536331}},
-      {title: 'Koh Kood Guesthouse, Thailand', location: {lat: 11.675546, lng: 102.541105}}
+      {title: 'Koh Kood Guesthouse, Thailand', location: {lat: 11.675546, lng: 102.541105}},
+      {title: 'A la Koh Kood, Thailand', location: {lat: 11.597153, lng: 102.551352}}
 
 
 
