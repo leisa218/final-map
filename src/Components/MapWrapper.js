@@ -16,7 +16,7 @@ class MapWrapper extends Component {
     locations: [
       {title: 'Ban Bua Cottage, Thailand', location: {lat: 11.665669, lng: 102.536357}},
       {title: 'bb Divers, Thailand', location: {lat: 11.632421, lng: 102.547440}},
-      {title: 'bb Dorm, Thailand', location: {lat: 11.675565, lng: 102.541089}},
+      {title: 'bb Dorm, Thailand', location: {lat: 11.632400, lng: 102.547408}},
       {title: 'Big Dreams Resort, Thailand', location: {lat: 11.625287, lng: 102.546876}},
       {title: 'Captain Nhong Seafood & Homestay, Thailand', location: {lat: 11.707709, lng: 102.571211}},
       {title: 'Eve House, Thailand', location: {lat: 11.609061, lng: 102.544243}},
